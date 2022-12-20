@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+
+	<link rel="stylesheet" type="text/css" href="Project3/specs.css">
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<!-- jQuery first -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<!-- Then Popper.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<!-- Then Bootstrap JS -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	
+ <style>
+
+ 	body{
+			background-color: #e1eaff;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-decoration: none;
+		}
+
+		.header{
+
+			height: 80px;
+			width: 100%;
+			display: block;
+			background-color: black;
+
+
+		}
+
+		.listitems{
+
+
+			height: 100%;
+			width: 100%;
+			display: block;
+			margin: 0 auto;
+			background-color: black;
+		}
+
+
+		.logo{
+
+				height: 100%;
+				display: table;
+				float: left;
+			}
+
+
+		.logo h1{
+
+				color: white;
+				height: 100%;
+				display: table-cell;
+				vertical-align: middle ;
+				font-family: 'Times New Roman';
+				font-size: 32px;
+				font-weight: 200;
+
+			}
+
+			.logo h1 span{
+				font-weight: 800;
+			}
+ 	
+
+
+ 		.nav{
+				height: 100%;
+				float: right;
+
+			}
+
+
+			.nav a{
+
+				height: 100%;
+				display: table;
+				float: left;
+				padding: 0px 20px;
+
+			}
+
+
+
+			.nav a:last-child{
+
+				padding-right: 0;
+
+
+			}
+
+
+			.nav a li{
+
+				height: 100%;
+				display: table-cell;
+				vertical-align: middle;
+				color: white;
+				font-family: 'Times New Roman';
+				font-size: 16px ;
+
+			}
+
+
+			.container{
+
+				width: 100%;
+				padding-right: 24px;
+				padding-left: 24px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+
+
+			.row{
+				display: flex;
+				flex-wrap: wrap;
+				margin-right: 12px;
+				margin-left: 12px;
+			}
+
+
+			.band{
+				 background-color: blueviolet;
+				  width: 100%;
+				  height: 40%;
+				 color: white;
+				  padding: 20px;
+				  margin-right: 40px;
+
+			}
+
+
+			.info{
+				  border: 5px outset red;
+				  box-shadow: 30px 30px black;
+				  background-color: lightblue;    
+				  width: 90%;
+				  margin-left: 50px;
+				  height: 770px;
+				  padding: 150px;
+							}
+
+
+
+					h3{
+
+				margin-left: 400px;
+				margin-bottom: 400px;
+
+			}
+
+
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 	body, table, input, select, textarea {
+
+}
+
+
+.graph {
+	margin-bottom:1em;
+  font:normal 100%/150% arial,helvetica,sans-serif;
+}
+
+.graph caption {
+	font:bold 150%/120% arial,helvetica,sans-serif;
+	padding-bottom:0.33em;
+}
+
+.graph tbody th {
+	text-align:right;
+}
+
+@supports (display:grid) {
+
+	@media (min-width:32em) {
+
+		.graph {
+			display:block;
+      width:600px;
+      height:300px;
+		}
+
+		.graph caption {
+			display:block;
+		}
+
+		.graph thead {
+			display:none;
+		}
+
+		.graph tbody {
+			position:relative;
+			display:grid;
+			grid-template-columns:repeat(auto-fit, minmax(2em, 1fr));
+			column-gap:2.5%;
+			align-items:end;
+			height:100%;
+			margin:3em 0 1em 2.8em;
+			padding:0 1em;
+			border-bottom:2px solid rgba(0,0,0,0.5);
+			background:repeating-linear-gradient(
+				180deg,
+				rgba(170,170,170,0.7) 0,
+				rgba(170,170,170,0.7) 1px,
+				transparent 1px,
+				transparent 20%
+			);
+		}
+
+		.graph tbody:before,
+		.graph tbody:after {
+			position:absolute;
+			left:-3.2em;
+			width:2.8em;
+			text-align:right;
+			font:bold 80%/120% arial,helvetica,sans-serif;
+		}
+
+		.graph tbody:before {
+			content:"100%";
+			top:-0.6em;
+		}
+
+		.graph tbody:after {
+			content:"0%";
+			bottom:-0.6em;
+		}
+
+		.graph tr {
+			position:relative;
+			display:block;
+		}
+
+		.graph tr:hover {
+			z-index:999;
+		}
+
+		.graph th,
+		.graph td {
+			display:block;
+			text-align:center;
+		}
+
+		.graph tbody th {
+			position:absolute;
+			top:-3em;
+			left:0;
+			width:100%;
+			font-weight:normal;
+			text-align:center;
+      white-space:nowrap;
+			text-indent:0;
+			transform:rotate(-45deg);
+		}
+
+		.graph tbody th:after {
+			content:"";
+		}
+
+		.graph td {
+			width:100%;
+			height:100%;
+			background:#F63;
+			border-radius:0.5em 0.5em 0 0;
+			transition:background 0.5s;
+		}
+
+		.graph tr:hover td {
+			opacity:0.7;
+		}
+
+		.graph td span {
+			overflow:hidden;
+			position:absolute;
+			left:50%;
+			top:50%;
+			width:0;
+			padding:0.5em 0;
+			margin:-1em 0 0;
+			font:normal 85%/120% arial,helvetica,sans-serif;
+/* 			background:white; */
+/* 			box-shadow:0 0 0.25em rgba(0,0,0,0.6); */
+			font-weight:bold;
+			opacity:0;
+			transition:opacity 0.5s;
+      color:white;
+		}
+
+		.toggleGraph:checked + table td span,
+		.graph tr:hover td span {
+			width:4em;
+			margin-left:-2em; /* 1/2 the declared width */
+			opacity:1;
+		}
+
+
+
+    
+
+
+	} /* min-width:32em */
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </style>
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+
+			<div class="header">
+					<div class="listitems">
+						<div class="logo">
+							<h1>DEMO <span>SITE</span></h1>
+						</div>
+
+						<ul class= "nav">
+							
+							<a><li>Home</li></a>
+							<a><li>About</li></a>
+							<a><li>Vote Now</li></a>
+							<a><li>Course Information</li></a>
+							<a><li>   </li></a>
+						</ul>
+					</div>
+				</div>
+
+
+		<div class="band">
+			<div class="container">
+				
+
+						<table>
+						  <tr>
+						    <th>About Us</th><br>
+						    <th>   </th>
+						  </tr>
+						  <tr>
+						  	<td style="font-size: 18px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel tempus urna, eu facilisis ipsum. Nullam dapibus nunc nisl, vitae sollicitudin diam fermentum vestibulum. Donec feugiat mauris dui, quis dignissim mi sollicitudin non. Nam faucibus lorem id est laoreet varius. Ut commodo velit ligula, eu tempus quam ultrices a. Mauris libero nunc, dapibus eget congue vel, imperdiet eu metus. Sed ac purus finibus, scelerisque ante ac, ultricies eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin risus nibh, facilisis sed mollis ac, ornare sit amet nulla. Aenean in nisi at tortor vehicula euismod eget ac sapien. Curabitur ut vestibulum velit. Mauris porttitor feugiat est ut sollicitudin.</td>
+
+
+
+						  	<td>
+						  		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+									<div class="carousel-inner">
+										<div class="carousel-item active">
+											<img class="w-100" src="image1.jpg" >
+										</div>
+										<div class="carousel-item">
+											<img class="w-100" src="image2.jpg" >
+										</div>
+										<div class="carousel-item">
+											<img class="w-100" src="image3.jpg" >
+										</div>
+									</div>
+									<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									</a>
+									<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									</a>
+								</div>
+								<br>
+
+							</td>
+						  </tr>
+						 
+						</table>
+			</div>
+		</div>
+
+
+
+		<br>
+		<br><br>
+		<br><br>
+		<br><br>
+		
+	
+
+
+
+
+<div class="container">
+			<div class="jumbotron">
+				<h1 style="text-align: center;">Course Information</h1>
+				
+			</div>
+		</div>
+		<br>
+<!-- <p id="demo"></p> -->
+
+	
+
+	<br><br>
+
+
+	<br><br>
+
+
+	<div class="info">
+
+		<table style="border: 10px solid black; width: 1400px; height: 100px; border-top: 5px;">
+			<tr>
+				<th>Financial Education</th>
+
+			</tr>
+			<tr>
+				<td>Testing to see if this works</td>
+
+				<td><img style="margin-left: 500px;" src="Tax1.jpg"></td>
+
+			</tr>
+			
+
+
+
+
+		</table>
+
+
+	</div>
+		
+
+	<br><br>
+
+
+
+	<div class="info">
+
+		<table style="border: 10px solid black; width: 1400px; height: 100px; border-top: 5px;">
+			<tr>
+				<th>Home Economics</th>
+
+			</tr>
+			<tr>
+				<td>Testing to see if this works</td>
+
+				<td><img style="margin-left: 500px; width: 600px; height:400px" src="Cook.jpg"></td>
+
+			</tr>
+			
+
+
+
+
+		</table>
+
+	</div>
+
+
+
+`<br><br>
+
+
+<div class="info">
+
+		<table style="border: 10px solid black; width: 1400px; height: 100px; border-top: 5px;">
+			<tr>
+				<th>WoodShop</th>
+
+			</tr>
+			<tr>
+				<td>Testing to see if this works</td>
+
+				<td><img style="margin-left: 300px; width: 700px; height: 440px;" src="Wood.jpeg"></td>
+
+			</tr>
+			
+
+
+
+
+		</table>
+
+	</div>
+	
+
+
+	<br><br>
+	<br><br>
+	<br><br>
+
+
+	
+
+
+
+
+		
+
+
+	
+	<br><br>
+
+
+	<div class="container">
+			<div class="jumbotron">
+				<h1 style="text-align: center;">Course Information</h1>
+				
+			</div>
+		</div>
+		<br>
+<!-- <p id="demo"></p> -->
+
+	
+
+	<br><br>
+
+
+
+	
+
+
+
+
+
+
+
+				
+
+
+
+			
+			
+
+		</div>
+
+
+		<br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="graph">
+	<caption>Bar Chart HTML From HTML Table</caption>
+	<thead>
+		<tr>
+			<th scope="col">Item</th>
+			<th scope="col">Percent</th>
+		</tr>
+	</thead><tbody>
+		<tr style="height:85%">
+			<th scope="row">Your Blog</th>
+			<td><span>85%</span></td>
+		</tr>
+		<tr style="height:23%">
+			<th scope="row">Medium</th>
+			<td><span>23%</span></td>
+		</tr>
+		<tr style="height:7%">
+			<th scope="row">Tumblr</th>
+			<td><span>7%</span></td>
+		</tr>
+		<tr style="height:38%">
+			<th scope="row">Facebook</th>
+			<td><span>38%</span></td>
+		</tr>
+		<tr style="height:35%">
+			<th scope="row">Youtube</th>
+			<td><span>35%</span></td>
+		</tr>
+		<tr style="height:30%">
+			<th scope="row">LinkedIn</th>
+			<td><span>30%</span></td>
+		</tr>
+		<tr style="height:5%">
+			<th scope="row">Twitter</th>
+			<td><span>5%</span></td>
+		</tr>
+		<tr style="height:20%">
+			<th scope="row">Other</th>
+			<td><span>20%</span></td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
